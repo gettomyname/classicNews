@@ -12,6 +12,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
         .box {
             text-align: center;
@@ -40,6 +41,7 @@
     <br><br>
     <button onclick="go()">Go!</button>
     <div class="hint">Введите имя html-файла из этой папки</div>
+    <div class="hint">Введите helpme.html для ознакомления с данным сайтом</div>
 </div>
 
 <script>
@@ -47,13 +49,18 @@ function go() {
     let file = document.getElementById("file").value.trim();
 
     // если забыли .html — добавляем
-    if (!file.endsWith(".html")) {
+    if (file !== "" && !file.endsWith(".html")) {
         file += ".html";
     }
 
     // базовая защита от перехода вне папки
     if (file.includes("/") || file.includes("\\")) {
         alert("Только файлы из этой папки");
+        return;
+    }
+
+    if (file === "") {
+        alert("Введите имя файла!");
         return;
     }
 
