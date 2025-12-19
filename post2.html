@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Новые функции и фичи</title>
+</head>
+<body>
+
+<p>
+Сегодня 20 декабря 2025 года. Это второй пост, и в этом посте нет каких-то рассуждений или какой-нибудь низшей философии. Я просто тестирую новые функции :))
+</p>
+
+<!-- Картинка после текста -->
+<img src="images/post2_01.jpg" alt="Пост 2 изображение" style="max-width:100%; height:auto; display:block; margin-top:10px;">
+
+<hr>
+
+<div>
+    <button onclick="goBack()">Back</button>
+    <button onclick="goMain()">Main page</button>
+    <button onclick="goNext()">Next</button>
+</div>
+
+<script type="text/javascript">
+function getPostNumber() {
+    var path = window.location.pathname;
+    var name = path.substring(path.lastIndexOf("/") + 1); // post4.html
+
+    var i = name.indexOf("post");
+    var j = name.indexOf(".html");
+
+    if (i !== 0 || j === -1) {
+        return null;
+    }
+
+    var num = name.substring(4, j); // цифра
+    return parseInt(num, 10);
+}
+
+function goBack() {
+    var n = getPostNumber();
+    if (n && n > 1) {
+        window.location.href = "post" + (n - 1) + ".html";
+    }
+}
+
+function goNext() {
+    var n = getPostNumber();
+    if (n) {
+        window.location.href = "post" + (n + 1) + ".html";
+    }
+}
+
+function goMain() {
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
