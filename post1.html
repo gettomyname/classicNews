@@ -23,26 +23,51 @@
 
 Microsoft (satanic organization) - те кто подарили власть над миром сатане отказавшись от 32-х битной архитектуры в 2021г с релизом Windows 11<br><br>
 
-И меня очень сильно огорчает то, что все производители ноутбуков, и настольных ПК (готовые сборки если с активированной Windows) начали переходить на эту злосчастную Windows 11<br><br>
-
-Windows 11 - ОС которая была напрямую принесена из преисподни руками антихриста в наш мир. Panos Panay и Сатья Наделла очень хорошо поймали контакт с дьяволом, да и вообще самим адом, гребанные человеконенавистники, что решили сделать такую говянную операционку. Я не понимаю каким нужно быть изоощрёным мазохистом чтобы на свой PC иль ноутбук установить Windows 11<br><br>
-
-Через Windows 11, Microsoft (satanic organization) следили за несчастными пользователями и передавали всю информацию дьяволу, тем самым давая ему ещё большую власть перед людьми.<br><br>
-
-Да я не буду говорить только о Windows вообще и ноутбуках или ПК<br><br>
-
-Все новейшие технологии и гаджеты делаются по инструкциям сатаны, как и все новые операционные системы<br><br>
-
-Вы заметьте что с каждым новым обновлением любой операционки, все больше и больше идет привязка к интернету, и серверам разным<br><br>
-
-Все данные таким образом собираются с гаджета и передаются организации, а организация уже все данные передает сатане.<br><br>
-
 ... На этом все.
 </p>
 
-<a href="index.html">
-    <button>Back</button>
-</a>
+<hr>
+
+<div>
+    <button onclick="goBack()">Back</button>
+    <button onclick="goMain()">Main page</button>
+    <button onclick="goNext()">Next</button>
+</div>
+
+<script type="text/javascript">
+function getPostNumber() {
+    var path = window.location.pathname;
+    var name = path.substring(path.lastIndexOf("/") + 1); // post4.html
+
+    var i = name.indexOf("post");
+    var j = name.indexOf(".html");
+
+    if (i !== 0 || j === -1) {
+        return null;
+    }
+
+    var num = name.substring(4, j); // цифра
+    return parseInt(num, 10);
+}
+
+function goBack() {
+    var n = getPostNumber();
+    if (n && n > 1) {
+        window.location.href = "post" + (n - 1) + ".html";
+    }
+}
+
+function goNext() {
+    var n = getPostNumber();
+    if (n) {
+        window.location.href = "post" + (n + 1) + ".html";
+    }
+}
+
+function goMain() {
+    window.location.href = "index.html";
+}
+</script>
 
 </body>
 </html>
