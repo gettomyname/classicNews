@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>lol</title>
+</head>
+<body>
+
+<p>
+    Сегодня 1 января уже 2026 года!<br>
+    Я очень рад, что 2025 год прошёл.<br>
+    2025 являлся продолжением 2024, а 2026 я считаю, будет продолжением 2023.<br>
+    Очень надеюсь на это.
+</p>
+
+<hr>
+
+<div>
+    <button onclick="goBack()">Back</button>
+    <button onclick="goMain()">Main page</button>
+    <button onclick="goNext()">Next</button>
+</div>
+
+<script type="text/javascript">
+function getPostNumber() {
+    var path = window.location.pathname;
+    var name = path.substring(path.lastIndexOf("/") + 1); // post4.html
+
+    var i = name.indexOf("post");
+    var j = name.indexOf(".html");
+
+    if (i !== 0 || j === -1) {
+        return null;
+    }
+
+    var num = name.substring(4, j); // цифра
+    return parseInt(num, 10);
+}
+
+function goBack() {
+    var n = getPostNumber();
+    if (n && n > 1) {
+        window.location.href = "post" + (n - 1) + ".html";
+    }
+}
+
+function goNext() {
+    var n = getPostNumber();
+    if (n) {
+        window.location.href = "post" + (n + 1) + ".html";
+    }
+}
+
+function goMain() {
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
