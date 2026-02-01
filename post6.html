@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>iPad 2</title>
+
+    <style>
+    body {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    pre {
+        font-family: "Times New Roman", Times, serif;
+        white-space: pre-wrap;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 15px 0;
+    }
+    </style>
+</head>
+<body>
+
+<pre>
+Сегодня 1 февраля 2026г! Начал писать в 09:13
+
+30 Января, я купил iPad 2 (2011г.) на 64 гигабайта в идеальном состоянии!
+</pre>
+
+<img src="images/post6_01.jpg" alt="iPad 2">
+
+<pre>
+Купил за:
+12000 KZT ₸
+23 USD $
+1800 RUB ₽
+1020 UAH ₴
+
+Собственно такой iPad 2, на eBay за 23 доллара не купишь. 
+У меня модель A1396 — на eBay такая же (3G + Wi-Fi, 64 GB, A1396, чёрная) стоит около 155$.
+</pre>
+
+<hr>
+
+<div>
+    <button onclick="goBack()">Back</button>
+    <button onclick="goMain()">Main page</button>
+    <button onclick="goNext()">Next</button>
+</div>
+
+<script type="text/javascript">
+function getPostNumber() {
+    var path = window.location.pathname;
+    var name = path.substring(path.lastIndexOf("/") + 1);
+
+    var i = name.indexOf("post");
+    var j = name.indexOf(".html");
+
+    if (i !== 0 || j === -1) {
+        return null;
+    }
+
+    var num = name.substring(4, j);
+    return parseInt(num, 10);
+}
+
+function goBack() {
+    var n = getPostNumber();
+    if (n && n > 1) {
+        window.location.href = "post" + (n - 1) + ".html";
+    }
+}
+
+function goNext() {
+    var n = getPostNumber();
+    if (n) {
+        window.location.href = "post" + (n + 1) + ".html";
+    }
+}
+
+function goMain() {
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
