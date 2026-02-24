@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Божественная учительница химии</title>
+
+    <style>
+    body {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    pre {
+        font-family: "Times New Roman", Times, serif;
+        white-space: pre-wrap;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 15px 0;
+    }
+    </style>
+</head>
+<body>
+
+<pre>
+Сегодня 5 февраля 2026г. (Опубликовано 24 февраля 2026г)
+Я учусь в 7 классе, и вот когда в 7 класс поступил, появились новые предметы - физика, алгебра, геометрия, география и "злоебучая химия"
+"злоебучая" из-за злоебучей учительницы по химии.
+Она меня ненавидит и показывает свою ненависть ко мне публично. Меня как-то раз с 7-8 января по 26 января не было в школе (пропустил 4 урока химии к слову..). Т.е две недели меня не было. Перед тем как я пошёл в школу, я написал когда я пойду ( в чат с одноклассниками) и так выпало, что в первый день в школе была химия. И она походу спросила у одноклассников когда я приду чтобы просто так отомстить.
+И в первый же день (для меня первый день) она провела диктант, чтобы мне двойку лишнюю поставить. А затем на следующий урок она провела она провела СОР (Суммативное оценивание за раздел) специально ради меня. Она могла ещё недели 2 не брать СОР, я уверен. 
+Но она это специально ради меня сделала. Потому-что она меня ненавидит. А сегодня 5 февраля, она не нашла хороший повод докопаться, и отчитала за 2 исписанные страницы в тетради по кл.работе (для той темы это было очень нормально).
+Вот такой не хороший человек.
+</pre>
+
+<hr>
+
+<div>
+    <button onclick="goBack()">Back</button>
+    <button onclick="goMain()">Main page</button>
+    <button onclick="goNext()">Next</button>
+</div>
+
+<script type="text/javascript">
+function getPostNumber() {
+    var path = window.location.pathname;
+    var name = path.substring(path.lastIndexOf("/") + 1);
+
+    var i = name.indexOf("post");
+    var j = name.indexOf(".html");
+
+    if (i !== 0 || j === -1) {
+        return null;
+    }
+
+    var num = name.substring(4, j);
+    return parseInt(num, 10);
+}
+
+function goBack() {
+    var n = getPostNumber();
+    if (n && n > 1) {
+        window.location.href = "post" + (n - 1) + ".html";
+    }
+}
+
+function goNext() {
+    var n = getPostNumber();
+    if (n) {
+        window.location.href = "post" + (n + 1) + ".html";
+    }
+}
+
+function goMain() {
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
