@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>13 марта, пост №8</title>
+
+    <style>
+    body {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    pre {
+        font-family: "Times New Roman", Times, serif;
+        white-space: pre-wrap;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 15px 0;
+    }
+    </style>
+</head>
+<body>
+
+<pre>
+Сегодня 13 марта 2026г.
+Сначала хочу поздравить с начавшейся весной!
+
+Я встречался и у меня была девушка. И мне это не понравилось.
+Мне не понравилось эта вся затея *отношений* и *любви*, и дал себе клятву что больше никогда у меня не будет второй половинки. У меня не будет второй половинки, не будет жены и не будет детей, никогда и низачто и не при каких обстоятельствах. Я больше ни с кем встречаться не буду, и любить каких-то баб я тоже не собираюсь. Лучше быть всю жизнь "одиноким" по мнению общества которое занимается всем этим и морочит себе голову лишний раз.
+
+В будущем девушки будут просить только денег и всё. Нечиго больше.
+
+А с меня, никто и копейки не высосет...
+</pre>
+
+<hr>
+
+<div>
+    <button onclick="goBack()">Back</button>
+    <button onclick="goMain()">Main page</button>
+    <button onclick="goNext()">Next</button>
+</div>
+
+<script type="text/javascript">
+function getPostNumber() {
+    var path = window.location.pathname;
+    var name = path.substring(path.lastIndexOf("/") + 1);
+
+    var i = name.indexOf("post");
+    var j = name.indexOf(".html");
+
+    if (i !== 0 || j === -1) {
+        return null;
+    }
+
+    var num = name.substring(4, j);
+    return parseInt(num, 10);
+}
+
+function goBack() {
+    var n = getPostNumber();
+    if (n && n > 1) {
+        window.location.href = "post" + (n - 1) + ".html";
+    }
+}
+
+function goNext() {
+    var n = getPostNumber();
+    if (n) {
+        window.location.href = "post" + (n + 1) + ".html";
+    }
+}
+
+function goMain() {
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
